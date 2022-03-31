@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/style.css">
-    <title>WEB</title>
+    <title>C.U.D</title>
 </head>
 
 <body>
     <header>
-        <h2 class="logo">WEBNAV</h2>
+        <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_cud.png" alt="">
+        <h2 class="logo">C.U.D</h2>
         <input type="checkbox" id="check">
         <label for="check" class="mostrar-menu">
             &#8801
@@ -30,6 +31,44 @@
             <a href="/contacto" class="boton-empezar">CONTACTO</a>
         </div>
     </section>
+
+    <section id="slider">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="style/hero.jpg" style="width:100%">
+                <div class="text">Mision</div>
+            </div>
+    
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="style/hero.jpg" style="width:100%">
+                <div class="text">Vision</div>
+            </div>
+    
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="style/hero.jpg" style="width:100%">
+                <div class="text">Nosotros</div>
+            </div>
+    
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+       
+    
+    
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+    </div>
+    
+    <script src="style/main.js"></script>
+    </section>
+   
     <section id="personas">
         <div>
             <img src="/.jpg" alt="">
@@ -44,7 +83,12 @@
             <a href="/contacto" class="boton-saber-mas">Saber mas</a>
         </div>
     </section>
-    <section id="iconos">
+    <section id="social">
+
+        <div><h3>Social</h3>
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FConfederacionDocentes%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>    </section>
+        </div>
+        <section id="iconos">
         <div class="contenido-iconos">
             <div>
                 <i class="fas fa-shiping-fast fa-3x"></i>
@@ -66,7 +110,8 @@
             <a href="/empezar" class="boton-saber-mas">Saber mas</a>
         </div>
     </section>
-    <a href="#" class="btn-flotante">Arriba</a>
+
+    <a href="#" class="btn-flotante">&#8593</a>
     <footer>
         <p>&copy;2022 C</p>
     </footer>
