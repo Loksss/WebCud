@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <title>WEB</title>
+</head>
+
+<body>
+    {{>header}}  
+    <section id="blog">
+        <div class="blog-heading">
+            <span>Noticias Recientes</span>
+            <h3>Noticias</h3>
+        </div>
+      
+        <div class="blog-container">
+            <div class="blog-box">
+                {{#docs}}
+                <div class="blog-img">
+                    <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t1.6435-9/95380060_769664896771829_1023134748337242112_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=e3f864&_nc_ohc=Eu7falZ3ZE4AX81XuDN&_nc_ht=scontent-lim1-1.xx&oh=00_AT858Utwsn8P1Doxfe4sMy64NfN3KLk0qT3LRPHzLh1inQ&oe=626436AE" alt="">
+                </div>
+                <div class="blog-text">
+                    <span>5 abril 2022</span>
+                    <a href="#" class="blog-title">{{titulo}}</a>
+                    <p>{{descripcion}}</p>
+                       
+                </div>
+                {{/docs}}
+            </div>
+        </div>
+    </section> 
+ 
+        </div>
+    </div>
+    {{>footer}}
+</body>
+
+</html>
