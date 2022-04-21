@@ -5,15 +5,15 @@ var router = express.Router();
 /*router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-*/ 
+*/
 
-/*WEB*/     
+/*WEB*/
  
 var Noticia = require("../database/collections/noticia");
 var Consulta = require("../database/collections/consulta");
 
  
-  
+/*Noticias*/  
 router.get('/', async(req, res,)=> {
   /*res.render('index', { title: 'Express' });*/
   let noticia = await Noticia.find({})
@@ -27,7 +27,6 @@ router.get('/noticia', async(req, res)=>{
   /*res.render('index', { title: 'Express' });*/
   res.render("noticia");
 });
-
 
 router.get("/noticiadetail/:id", async (req, res) => {
   var params = req.params;
@@ -72,7 +71,7 @@ router.delete(/noticias\/[a-z0-9]{1,}$/, (req, res) => {
         });
   });
 });
-
+/*Noticias*/
 /*Consulta*/
 router.get('/consulta', async(req, res)=>{
   let consulta = await Consulta.find({})
@@ -80,11 +79,38 @@ router.get('/consulta', async(req, res)=>{
     .sort({ id: -1 })
     .select("pregunta respuesta");
   res.render("consulta", { consulta: consulta });
-}); 
+});
+router.get("/detail/:id", async (req, res) => {
+  var params = req.params;
+  if (params.id == null) {
+    res.status(200).json({
+      msn: "Parametro necesario",
+    });
+    return;
+  }
+  var obj = await Consulta.find({ _id: params.id });
+  if (obj.length == 1) {
+    res.render("detail", {obj:obj});
+    return;
+  }
+  res.status(200).json({ msn: "El archivo no se encuenta" });
+});
+
+router.post("/detail/:id", async (req, res) => {
+  var params = req.params;
+  var body = req.body;
+  var ok =
+  await Consulta.updateOne(
+    { _id: params.id },
+    { $set: { respuesta: body.respuesta } },
+    { multi: true }
+  );
+  res.status(200).json({ msn: "GO MAN" });
+});
 
 router.post('/consulta',async(req, res) => {
   var consulta = req.body;
-  var consulta = {   
+  var consulta = {
     pregunta : req.body.pregunta,                                 
     respuesta : req.body.respuesta
   };
@@ -99,7 +125,7 @@ router.post('/consulta',async(req, res) => {
     });
   });
 });
- 
+
 router.delete(/consulta\/[a-z0-9]{1,}$/, (req, res) => {
   var url = req.url;
   var id = url.split("/")[2];
@@ -109,10 +135,6 @@ router.delete(/consulta\/[a-z0-9]{1,}$/, (req, res) => {
         });
   });
 });
-  
-     
-       
-   
-/*WEB*/               
- 
-module.exports = router; 
+
+/*WEB*/
+module.exports = router;

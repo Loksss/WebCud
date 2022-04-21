@@ -1,64 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <title>C.U.D</title>
-</head>
-
+{{>header}}
 <body> 
-    <header>
-        <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_cud.png" alt="">
-        <h2 class="logo">C.U.D</h2>
-        <input type="checkbox" id="check">
-
-        <label for="check" class="mostrar-menu">
-            &#8801
-        </label>
-
-        <nav class="menu">
-            <a href="/#banner">Inicio</a>
-            <a href="/#personas">Intitucion</a>
-            <a href="/noticia">Agregar Noticia</a>
-            <a href="/consulta">Consulta</a>
-            <a href="/#iconos">Contacto</a>
-            <a href="/#iconos">Login</a>
-
-            <label for="check" class="esconder-menu">
-                    &#215
-            </label>
-        </nav>
-    </header>
+     
 
     <section id="banner">
         <div class="contenido-banner">
-            <h3><span>C.U.D. Confederación Universitaria de Docentes Bolivia  </span><br> Misión - Visión</h3>
-            <a href="/contacto" class="boton-empezar">Ver Más</a>
+            <h3><span>Confederación Universitaria de Docentes Bolivia  </span><br> Misión - Visión</h3>
         </div>
-    </section>
-
-    <section id="noticias">
-        <div>
-            <h4>Noticias</h4>
-            <p>Encuentra lo mas Ultimo de las Noticias</p>
-        </div>  
-       
-    </section>
+    </section>  
  
-
     <section id="slider">
+        <p>Noticias</p>
         <div class="slideshow-container">
             {{#noticia}}
             <div class="mySlides fade">
-                
-                <div class="numbertext">{{titulo}}</div>
-                <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t1.6435-9/95380060_769664896771829_1023134748337242112_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=e3f864&_nc_ohc=Eu7falZ3ZE4AX81XuDN&_nc_ht=scontent-lim1-1.xx&oh=00_AT858Utwsn8P1Doxfe4sMy64NfN3KLk0qT3LRPHzLh1inQ&oe=626436AE" alt="" style="width:100%">
-                <div class="text">{{descripcion}}</div>
-                <a href="/noticiadetail/{{_id}}" class="boton-noticia">Leer mas</a>
-            </div>
+                <a class="text" href="/noticiadetail/{{_id}}">{{titulo}}</a>
+                <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t1.6435-9/95380060_769664896771829_1023134748337242112_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=e3f864&_nc_ohc=Eu7falZ3ZE4AX81XuDN&_nc_ht=scontent-lim1-1.xx&oh=00_AT858Utwsn8P1Doxfe4sMy64NfN3KLk0qT3LRPHzLh1inQ&oe=626436AE" alt="" style="width:100%">            </div>
             {{/noticia}}
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -66,54 +22,192 @@
         <script src="style/main.js"></script>
     </section>
 
-    
-    
     <section id="personas">
         <div>
-            
             <h6><i class="fas fa-medkit" style='font-size:32px;color:#686b6b;'></i> </h6>
-
-        
             <h4>Consultas Médicas</h4>
             <p>Contactate con nosotros para atencion general</p>
             <a href="/consulta" class="boton-saber-mas">Consultas</a>
+        </div>
+        <div>
+            <h6><i class="fas fa-medkit" style='font-size:32px;color:#686b6b;'></i> </h6>
+            <h4>Consultas Psicológica</h4>
+            <p>Contactate con nosotros para atencion psicologica</p>
+            <a href="/psicologica" class="boton-saber-mas">Consultas</a>
         </div>
     </section>
 
     <section id="social">
         <div><h4>Redes Sociales</h4>
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FConfederacionDocentes%2F&tabs=timeline&width=290&height=460&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId" width="290" height="460" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> 
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FConfederacionDocentes%2F&tabs=timeline&width=290&height=460&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId" width="290" height="460" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
     </section>
 
     <section id="iconos">
         <div class="contenido-iconos">
-            <div>
-                <i class="fas fa-shiping-fast fa-3x"></i>
-                <h6>Rapido</h6>
-                <p>Lorem ipsum dolor sit amet consectetu</p>
+            <div id="icono-mobile">
+                <img src="http://www.ceub.edu.bo/portal/images/slider/thumb-1.jpg" alt="">
+                <h6>Comité Ejecutivo de la Universidad Boliviana</h6>
+                <p>(C.E.U.B)</p>
             </div>
-            <div>
-                <i class="fas fa-shiping-fast fa-3x"></i>
-                <h6>Accesible</h6>
-                <p>Lorem ipsum dolor sit amet consectetu</p>
+            <div id="icono-mobile">
+                <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_cud.png" alt="">
+                <h6>Confederación Universitaria de Docentes </h6>
+                <p>(C.U.D.)</p>
             </div>
-            <div id="icono-mobile"> 
-                <i class="fas fa-shiping-fast fa-3x"></i>
-                <h6>Responsive</h6>
-                <p>Lorem ipsum dolor sit amet consectetu</p>
+            <div id="icono-mobile">
+                <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_cub.png" alt="">
+
+                <h6>Confederación Universitaria Boliviana</h6>
+                <p>(C.U.B.)</p>
             </div>
+            
         </div>
         <div class="boton-iconos">
             <a href="/empezar" class="boton-saber-mas">Saber mas</a>
         </div>
-    </section> 
+    </section>
+    
+    <p style="margin: auto 50px;">Otros Sitios</p>
+    <div class="galeria2">
+        
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/thumb-1.jpg" alt="imagen 
+            principal">
+            <div class="cuerpo-card">
+                <h5>Comité Ejecutivo de la Universidad Boliviana </h5>
+                <p>(C.E.U.B)</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_cud.png">
+            <div class="cuerpo-card">
+                <h5>Confederación Universitaria de Docentes </h5>
+                <p>(C.U.D.)</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_cub.png">
+            <div class="cuerpo-card">
+                <h5>Confederación Universitaria Boliviana </h5>
+                <p>(C.U.B.)</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_sfx.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Mayor, Real y Pontificia San Francisco Xavier de Chuquisaca </h5>
+                <p>(U.M.R.P.S.F.X.CH.)</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_umsa.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Mayor de San Andrés </h5>
+                <p>(U.M.S.A.)</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_umms.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Mayor de San Simón </h5>
+                <p>(U.M.S.S.)</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_uagrm.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Autónoma Gabriel René Moreno</h5>
+                <p>(U.A.G.R.M.)</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_uatf.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Autónoma Tomás Frías</h5>
+                <p>(U.A.T.F.)</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_uto.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Técnica de Oruro</h5>
+                <p>(U.T.O.)</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_uajms.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Autónoma Juan Misael Saracho</h5>
+                <p>U.A.J.M.S.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_uabjb.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Autónoma del Beni "José Ballivian"</h5>
+                <p>U.A.B."J.B."</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_unsxxx.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Nacional Siglo XX</h5>
+                <p>UNSXX</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_uap.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Amazónica de Pando</h5>
+                <p>U.A.P.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_upea.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Pública de El Alto</h5>
+                <p>U.P.E.A.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_ucb.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Católica Boliviana "San Pablo" </h5>
+                <p>U.C.B.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_emi.png">
+            <div class="cuerpo-card">
+                <h5>Escuela Militar de Ingeniería</h5>
+                <p>E.M.I.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_uasb.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Andina Simón Bolivar </h5>
+                <p>U.A.S.B.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://www.ceub.edu.bo/portal/images/slider/tumbs_unipol.png">
+            <div class="cuerpo-card">
+                <h5>Universidad Policial </h5>
+                <p>UNIPOL</p>
+            </div>
+        </div>
+
+    </div>
 
 
 
+     
+
+ 
+ 
     <a href="#" class="btn-flotante">&#8593</a>
     {{>footer}}
     
 </body>
-
-</html>

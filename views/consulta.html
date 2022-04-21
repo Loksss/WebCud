@@ -1,16 +1,25 @@
 {{>header}}
     <section id="consultas">
-        <h1>Consultas Médicas</h1>
+      <span style="display: flex; justify-content: center; align-items: center;"><a style="display: flex; justify-content: center; align-items: center; text-decoration: none;" href="/">Inicio</a> > Consulta</span>
+        <h1 style="display: flex; justify-content: center; align-items: center;">Consultas</h1>
         {{#consulta}}
         <div class="contenido-consultas">
           <h6>Pregunta:{{pregunta}}</h6>  
-          <p>Respuesta:{{respuesta}}</p>                      
+          <p>Respuesta:{{respuesta}}</p>  
+          <td>
+            <a   style="display: flex; justify-content: center; align-items: center; text-decoration: none;" href="/detail/{{_id}}" class="editarBtn" hola="prueba">Responder</a>
+          </td> 
+
+ 
+ 
         </div>
+
+        
         {{/consulta}}
     </section>
     <hr>
     <section id="post">
-        <div class="col-8">
+        <div  class="col-8">
             <form action="" id="formdata" method="post">
               <div class="form-group">
                 <input type="hidden" name="id" id="" value="{{id}}">
@@ -18,46 +27,13 @@
                 <input type="text" class="form-control" name="pregunta" id="" aria-describedby="helpId" placeholder=""
                   value="{{pregunta}}">
               </div>
-              <div class="form-group">
-                <label for="">Escriba su respuesta</label>
-                <input type="text" class="form-control" name="respuesta" id="" aria-describedby="helpId" placeholder=""
-                  value="{{respuesta}}">
-               </div>
- 
+               
               <button type="submit" id="updateinfo" class="btn btn-primary">Enviar</button>
   
             </form>
       
       </div>
     </section>
-
-
-
-    <script type="module">
-        var formdata = document.getElementById("formdata");
-        formdata.addEventListener("submit", (e) => {
-          var data = formToJSON(formdata.elements);
-          console.log(data);
-          e.preventDefault();
-          var misCabeceras = new Headers();
-          fetch("/consulta", {
-            method: "POST",
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-          }).then(
-            response => response.text()// if the response is a JSON object
-          ).then(
-            success => {
-              alert("Datos Enviados!")
-            }
-          )
-          return false;
-        });
-      
-      </script>
-
+ 
 
 {{>footer}}
