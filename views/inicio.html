@@ -1,49 +1,99 @@
 {{>header}}
 <body> 
-     
-
-    <section id="banner">
-        <div class="contenido-banner">
-            <h3><span>Confederación Universitaria de Docentes Bolivia  </span><br> Misión - Visión</h3>
+    <Hr></Hr>
+    <section id="sliderpresentacion">
+    <!-- Image container of the image slider -->
+    <div class="image-container">
+        <div class="slide">
+            <div class="slideNumber">Confederación Universitaria de Docentes Bolivia</div>
+            <img class="imgs" src=
+"http://www.ceub.edu.bo/portal/images/slider/slide-3.jpg">
         </div>
-    </section>  
- 
+        <div class="slide">
+            <div class="slideNumber">Misión
+                
+            </div>
+            <img class="imgs" src=
+"http://www.ceub.edu.bo/portal/images/slider/slide-3.jpg">
+        </div>
+        <div class="slide">
+            <div class="slideNumber">Visión
+                 
+            </div>
+            <img class="imgs" src=
+"http://www.ceub.edu.bo/portal/images/slider/slide-3.jpg">
+        </div>
+   
+  
+        <!-- Next and Previous icon to change images -->
+        <a class="previous" onclick="moveSlides(-1)">
+            <i class="fa fa-chevron-circle-left"></i>
+        </a>
+        <a class="next" onclick="moveSlides(1)">
+            <i class="fa fa-chevron-circle-right"></i>
+        </a>
+    </div>
+  
+    <div style="text-align:center">
+        <span class="footerdot"
+            onclick="activeSlide(1)">
+        </span>
+        <span class="footerdot"
+            onclick="activeSlide(2)">
+        </span>
+        <span class="footerdot"
+            onclick="activeSlide(3)">
+        </span>
+        <span class="footerdot"
+            onclick="activeSlide(4)">
+        </span>
+    </div>
+    </section>
+  
     <section id="slider">
         <p>Noticias</p>
         <div class="slideshow-container">
             {{#noticia}}
             <div class="mySlides fade">
                 <a class="text" href="/noticiadetail/{{_id}}">{{titulo}}</a>
-                <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t1.6435-9/95380060_769664896771829_1023134748337242112_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=e3f864&_nc_ohc=Eu7falZ3ZE4AX81XuDN&_nc_ht=scontent-lim1-1.xx&oh=00_AT858Utwsn8P1Doxfe4sMy64NfN3KLk0qT3LRPHzLh1inQ&oe=626436AE" alt="" style="width:100%">            </div>
-            {{/noticia}}
+                <img src="https://www.caracteristicas.co/wp-content/uploads/2017/03/noticia-3-e1565056783782.jpg" alt="" style="width:100%"></div>
+                {{/noticia}}
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
         <script src="style/main.js"></script>
     </section>
-
+ 
+     
     <section id="personas">
         <div>
-            <h6><i class="fas fa-medkit" style='font-size:32px;color:#686b6b;'></i> </h6>
+            <img src="https://img.freepik.com/foto-gratis/doctor-cruzando-brazos-mientras-sostiene-estetoscopio-bata-blanca_176474-8491.jpg?w=740&t=st=1651705640~exp=1651706240~hmac=9084c2dedcb8422d88a1f00b4aaf61fd9b3471a57e1b84090a5032a356a139f1" style="height: auto; width: 50%;">
             <h4>Consultas Médicas</h4>
             <p>Contactate con nosotros para atencion general</p>
             <a href="/consulta" class="boton-saber-mas">Consultas</a>
         </div>
         <div>
-            <h6><i class="fas fa-medkit" style='font-size:32px;color:#686b6b;'></i> </h6>
+            <img src="https://softwareparapsicologos.com/wp-content/uploads/2019/11/software-psicologos-768x430.jpg" style="height: auto; width: 50%;">
             <h4>Consultas Psicológica</h4>
             <p>Contactate con nosotros para atencion psicologica</p>
             <a href="/psicologica" class="boton-saber-mas">Consultas</a>
         </div>
     </section>
-
+    <h4>Redes</h4>
     <section id="social">
-        <div><h4>Redes Sociales</h4>
+        <div>
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FConfederacionDocentes%2F&tabs=timeline&width=290&height=460&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId" width="290" height="460" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        <div>
+            <iframe width="290" height="155" src="https://www.youtube.com/embed/TjNI5w1wGoU">
+            </iframe>
         </div>
     </section>
 
-    <section id="iconos">
+
+    
+
+    <!--<section id="iconos">
         <div class="contenido-iconos">
             <div id="icono-mobile">
                 <img src="http://www.ceub.edu.bo/portal/images/slider/thumb-1.jpg" alt="">
@@ -66,11 +116,14 @@
         <div class="boton-iconos">
             <a href="/empezar" class="boton-saber-mas">Saber mas</a>
         </div>
-    </section>
+    </section>-->
+
     
-    <p style="margin: auto 50px;">Otros Sitios</p>
+    
+
+    <section id="OtrosSitios">
+        <h4>Otros Sitios</h4>
     <div class="galeria2">
-        
         <div class="card">
             <img src="http://www.ceub.edu.bo/portal/images/slider/thumb-1.jpg" alt="imagen 
             principal">
@@ -198,15 +251,13 @@
                 <p>UNIPOL</p>
             </div>
         </div>
-
     </div>
-
-
-
-     
+    </section>
 
  
- 
+    
+
+
     <a href="#" class="btn-flotante">&#8593</a>
     {{>footer}}
     

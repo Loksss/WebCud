@@ -8,11 +8,11 @@ var router = express.Router();
 */
 
 /*WEB*/
- 
+
+
 var Noticia = require("../database/collections/noticia");
 var Consulta = require("../database/collections/consulta");
 
- 
 /*Noticias*/  
 router.get('/', async(req, res,)=> {
   /*res.render('index', { title: 'Express' });*/
@@ -41,14 +41,15 @@ router.get("/noticiadetail/:id", async (req, res) => {
     res.render("noticiadetail", {docs:docs});
     return;
   }
-  res.status(200).json({ msn: "El archivo no se encuenta" });
+  res.status(200).json({ msn: "El archivo no se encuentra" });
 });
- 
+
 router.post('/noticia',async(req, res) => {
   var noticia = req.body;
   var noticia = {   
     titulo : req.body.titulo,                                 
-    descripcion : req.body.descripcion
+    descripcion : req.body.descripcion,
+    imagen : req.body.imagen
   };
   var noticiaData = new Noticia(noticia);
   noticiaData.save().then( (rr) => {
@@ -111,7 +112,7 @@ router.post("/detail/:id", async (req, res) => {
 router.post('/consulta',async(req, res) => {
   var consulta = req.body;
   var consulta = {
-    pregunta : req.body.pregunta,                                 
+    pregunta : req.body.pregunta,                             
     respuesta : req.body.respuesta
   };
   var consultaData = new Consulta(consulta);
@@ -135,6 +136,6 @@ router.delete(/consulta\/[a-z0-9]{1,}$/, (req, res) => {
         });
   });
 });
-
+ 
 /*WEB*/
-module.exports = router;
+module.exports = router;  
